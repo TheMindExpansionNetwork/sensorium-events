@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { MessageSquare, X, Send, Sparkles, Bot, User, ArrowRight } from 'lucide-react';
+import { X, Send, Sparkles, Bot, User } from 'lucide-react';
 import { SENSORIUM_DATA } from '../data/sensoriumData';
 import { DB } from '../utils/database';
 
@@ -78,26 +78,26 @@ export default function ChatBot({ setView }) {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[360px] sm:w-[400px] h-[520px] rounded-2xl bg-[#080D11] border border-gold-metallic/30 shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300">
+        <div className="w-[360px] sm:w-[400px] h-[520px] rounded-2xl bg-[#080D11] light:bg-white border border-gold-metallic/30 light:border-amber-700/30 shadow-2xl flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6 duration-300">
           
           {/* Header */}
-          <div className="p-4 bg-gradient-to-r from-[#0C151B] to-[#080D11] border-b border-gold-metallic/20 flex items-center justify-between">
+          <div className="p-4 bg-gradient-to-r from-[#0C151B] to-[#080D11] light:from-slate-100 light:to-slate-50 border-b border-gold-metallic/20 light:border-amber-700/20 flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-9 h-9 rounded-full bg-teal-500/20 border border-teal-400/40 flex items-center justify-center">
-                <Sparkles className="w-4 h-4 text-teal-glow" />
+                <Sparkles className="w-4 h-4 text-teal-glow light:text-teal-700" />
               </div>
               <div>
                 <div className="font-serif text-sm font-bold gold-gradient-text tracking-wider">
                   Sensorium Guide
                 </div>
-                <div className="text-[10px] text-teal-300 font-medium">
+                <div className="text-[10px] text-teal-300 light:text-teal-700 font-medium">
                   Autonomous Conscious Concierge
                 </div>
               </div>
             </div>
             <button
               onClick={() => setIsOpen(false)}
-              className="text-slate-400 hover:text-slate-100 p-1"
+              className="text-slate-400 light:text-slate-600 hover:text-slate-100 light:hover:text-slate-900 p-1"
             >
               <X className="w-5 h-5" />
             </button>
@@ -112,27 +112,27 @@ export default function ChatBot({ setView }) {
               >
                 {m.role === 'assistant' && (
                   <div className="w-6 h-6 rounded-full bg-teal-600/30 border border-teal-500/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <Bot className="w-3.5 h-3.5 text-teal-300" />
+                    <Bot className="w-3.5 h-3.5 text-teal-300 light:text-teal-700" />
                   </div>
                 )}
                 <div
                   className={`max-w-[80%] p-3 rounded-xl leading-relaxed ${
                     m.role === 'user'
-                      ? 'bg-gradient-to-r from-gold-600 to-gold-500 text-slate-950 font-medium rounded-tr-none'
-                      : 'bg-[#101A20] border border-gold-metallic/15 text-slate-200 rounded-tl-none shadow-sm'
+                      ? 'bg-gradient-to-r from-gold-600 to-gold-500 text-slate-950 font-medium rounded-tr-none shadow-md'
+                      : 'bg-[#101A20] light:bg-slate-100 border border-gold-metallic/15 light:border-slate-200 text-slate-200 light:text-slate-800 rounded-tl-none shadow-sm'
                   }`}
                 >
                   {m.text}
                 </div>
                 {m.role === 'user' && (
                   <div className="w-6 h-6 rounded-full bg-gold-500/20 border border-gold-400/40 flex items-center justify-center shrink-0 mt-0.5">
-                    <User className="w-3.5 h-3.5 text-gold-400" />
+                    <User className="w-3.5 h-3.5 text-gold-400 light:text-amber-700" />
                   </div>
                 )}
               </div>
             ))}
             {isTyping && (
-              <div className="flex items-center space-x-2 text-slate-400 text-[11px] italic">
+              <div className="flex items-center space-x-2 text-slate-400 light:text-slate-500 text-[11px] italic">
                 <Bot className="w-4 h-4 text-teal-400 animate-spin" />
                 <span>Sensorium resonance channeling...</span>
               </div>
@@ -141,39 +141,39 @@ export default function ChatBot({ setView }) {
           </div>
 
           {/* Quick Prompts */}
-          <div className="px-4 py-2 bg-[#05080A] border-t border-white/5 flex gap-1.5 overflow-x-auto text-[10px] text-slate-400 no-scrollbar">
+          <div className="px-4 py-2 bg-[#05080A] light:bg-slate-50 border-t border-white/5 light:border-slate-200 flex gap-1.5 overflow-x-auto text-[10px] text-slate-400 no-scrollbar">
             <button 
               onClick={() => setInput("How do I get tickets?")}
-              className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-gold-500/20 hover:text-gold-300 border border-white/5 whitespace-nowrap"
+              className="px-2.5 py-1 rounded-full bg-white/5 light:bg-slate-200 hover:bg-gold-500/20 hover:text-gold-300 light:hover:text-amber-800 border border-white/5 light:border-slate-300 whitespace-nowrap text-slate-300 light:text-slate-700 font-medium"
             >
               🎟️ Tickets
             </button>
             <button 
               onClick={() => setInput("How to apply as a vendor?")}
-              className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-teal-500/20 hover:text-teal-300 border border-white/5 whitespace-nowrap"
+              className="px-2.5 py-1 rounded-full bg-white/5 light:bg-slate-200 hover:bg-teal-500/20 hover:text-teal-300 light:hover:text-teal-800 border border-white/5 light:border-slate-300 whitespace-nowrap text-slate-300 light:text-slate-700 font-medium"
             >
               🌿 Vendor
             </button>
             <button 
               onClick={() => setInput("Tell me about Ancient vs Modern Science")}
-              className="px-2.5 py-1 rounded-full bg-white/5 hover:bg-teal-500/20 hover:text-teal-300 border border-white/5 whitespace-nowrap"
+              className="px-2.5 py-1 rounded-full bg-white/5 light:bg-slate-200 hover:bg-teal-500/20 hover:text-teal-300 light:hover:text-teal-800 border border-white/5 light:border-slate-300 whitespace-nowrap text-slate-300 light:text-slate-700 font-medium"
             >
               🧬 Theme Info
             </button>
           </div>
 
           {/* Input Form */}
-          <form onSubmit={handleSend} className="p-3 bg-[#0C151B] border-t border-gold-metallic/20 flex items-center space-x-2">
+          <form onSubmit={handleSend} className="p-3 bg-[#0C151B] light:bg-slate-100 border-t border-gold-metallic/20 light:border-amber-700/20 flex items-center space-x-2">
             <input
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Ask anything about the event..."
-              className="flex-1 bg-[#060A0D] border border-gold-metallic/20 rounded-xl px-3 py-2 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400"
+              className="flex-1 bg-[#060A0D] light:bg-white border border-gold-metallic/20 light:border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
             />
             <button
               type="submit"
-              className="p-2 rounded-xl bg-gold-metallic hover:bg-gold-400 text-slate-950 transition"
+              className="p-2 rounded-xl bg-gold-metallic hover:bg-gold-400 text-slate-950 transition shadow-sm"
             >
               <Send className="w-4 h-4" />
             </button>

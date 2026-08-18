@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calendar, MapPin, Clock, Sparkles, ArrowRight, ExternalLink, ShieldCheck, Zap, Flame, Compass, MessageCircle, Check } from 'lucide-react';
+import { Calendar, MapPin, Sparkles, ExternalLink, MessageCircle, Check } from 'lucide-react';
 import { SENSORIUM_DATA } from '../data/sensoriumData';
 import { DB } from '../utils/database';
 
@@ -32,38 +32,38 @@ export default function LandingPage({ setView }) {
             {/* Left Content / Narrative */}
             <div className="p-8 sm:p-12 lg:col-span-7 space-y-6">
               
-              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 text-xs font-semibold uppercase tracking-widest">
-                <Sparkles className="w-3.5 h-3.5 text-teal-glow" />
+              <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 light:text-teal-800 text-xs font-semibold uppercase tracking-widest">
+                <Sparkles className="w-3.5 h-3.5 text-teal-glow light:text-teal-600" />
                 <span>Featured Campaign · September 19, 2026</span>
               </div>
 
               <div className="space-y-2">
-                <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-100 uppercase leading-tight">
+                <h1 className="font-serif text-3xl sm:text-5xl font-black text-slate-100 light:text-slate-900 uppercase leading-tight">
                   <span className="gold-gradient-text">Ancient Tools</span>
                   <br />
-                  <span className="text-slate-200 text-2xl sm:text-4xl">&amp; Modern Science</span>
+                  <span className="text-slate-200 light:text-slate-800 text-2xl sm:text-4xl">&amp; Modern Science</span>
                 </h1>
-                <p className="text-xs sm:text-sm text-teal-300 font-medium tracking-widest uppercase">
+                <p className="text-xs sm:text-sm text-teal-300 light:text-teal-700 font-semibold tracking-widest uppercase">
                   Natural Biohacking vs. Technology Biohacking
                 </p>
               </div>
 
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 leading-relaxed font-normal">
                 Where the spiritual meets the clinical. Explore the synthesis of ancestral breathwork, somatic movement, plant medicine, and sacred sound with frontier frequency technologies, cold therapy, and neuroscience.
               </p>
 
               {/* Event Quick Details */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-[#060C10] border border-gold-metallic/20 space-y-1">
-                  <div className="text-[10px] text-slate-500 uppercase font-semibold">Date & Time</div>
-                  <div className="text-xs text-gold-300 font-medium">Saturday, Sep 19, 2026</div>
-                  <div className="text-[11px] text-slate-400">5:00 PM – 11:00 PM EDT</div>
+                <div className="p-4 rounded-xl bg-[#060C10] light:bg-slate-50 border border-gold-metallic/20 light:border-amber-700/20 space-y-1">
+                  <div className="text-[10px] text-slate-400 light:text-slate-500 uppercase font-semibold">Date &amp; Time</div>
+                  <div className="text-xs text-gold-300 light:text-amber-800 font-semibold">Saturday, Sep 19, 2026</div>
+                  <div className="text-[11px] text-slate-400 light:text-slate-600">5:00 PM – 11:00 PM EDT</div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-[#060C10] border border-teal-500/20 space-y-1">
-                  <div className="text-[10px] text-slate-500 uppercase font-semibold">Location</div>
-                  <div className="text-xs text-teal-300 font-medium">Casa Mannabliss Sanctuary</div>
-                  <div className="text-[11px] text-slate-400">2410 N Federal Hwy, Delray Beach</div>
+                <div className="p-4 rounded-xl bg-[#060C10] light:bg-slate-50 border border-teal-500/20 light:border-teal-700/20 space-y-1">
+                  <div className="text-[10px] text-slate-400 light:text-slate-500 uppercase font-semibold">Location</div>
+                  <div className="text-xs text-teal-300 light:text-teal-800 font-semibold">Casa Mannabliss Sanctuary</div>
+                  <div className="text-[11px] text-slate-400 light:text-slate-600">2410 N Federal Hwy, Delray Beach</div>
                 </div>
               </div>
 
@@ -83,9 +83,9 @@ export default function LandingPage({ setView }) {
                   href={SENSORIUM_DATA.nextEvent.whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-full glass-card border border-teal-400/40 text-teal-300 hover:text-white font-semibold text-xs tracking-widest uppercase transition flex items-center justify-center space-x-2"
+                  className="px-6 py-3.5 rounded-full glass-card border border-teal-400/40 text-teal-300 light:text-teal-800 hover:text-white light:hover:text-teal-950 font-semibold text-xs tracking-widest uppercase transition flex items-center justify-center space-x-2"
                 >
-                  <MessageCircle className="w-4 h-4 text-teal-400" />
+                  <MessageCircle className="w-4 h-4 text-teal-400 light:text-teal-600" />
                   <span>Join Chat Group</span>
                 </a>
               </div>
@@ -118,7 +118,7 @@ export default function LandingPage({ setView }) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center space-y-3 mb-16">
-          <span className="text-xs font-semibold text-teal-400 tracking-widest uppercase">
+          <span className="text-xs font-semibold text-teal-400 light:text-teal-700 tracking-widest uppercase">
             Experience Format
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text uppercase">
@@ -133,31 +133,31 @@ export default function LandingPage({ setView }) {
             <div className="absolute top-0 right-0 w-32 h-32 bg-teal-500/10 rounded-full blur-3xl"></div>
             
             <div className="flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 text-[10px] font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-teal-500/20 text-teal-300 light:text-teal-800 text-[10px] font-bold uppercase tracking-wider">
                 Open to the Public · Free Entry
               </span>
-              <span className="text-xs text-slate-400 font-medium">5:00 PM – 9:30 PM</span>
+              <span className="text-xs text-slate-400 light:text-slate-600 font-medium">5:00 PM – 9:30 PM</span>
             </div>
 
-            <h3 className="font-serif text-2xl font-bold text-slate-100">
+            <h3 className="font-serif text-2xl font-bold text-slate-100 light:text-slate-900">
               Outdoor Conscious Marketplace
             </h3>
 
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 leading-relaxed font-normal">
               Vibrant open-air sanctuary featuring botanical elixir bars, organic food trucks, artisanal crafts, interactive holistic vendor booths, and live acoustic frequencies under the Delray sky.
             </p>
 
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-400 light:text-slate-600">
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-teal-400" />
+                <Check className="w-4 h-4 text-teal-400 light:text-teal-600" />
                 <span>Adaptogenic Tonics &amp; Raw Cacao Alchemy</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-teal-400" />
+                <Check className="w-4 h-4 text-teal-400 light:text-teal-600" />
                 <span>Handcrafted Crystals &amp; Sacred Geometry Art</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-teal-400" />
+                <Check className="w-4 h-4 text-teal-400 light:text-teal-600" />
                 <span>Community Networking &amp; Frequency Exchange</span>
               </li>
             </ul>
@@ -168,31 +168,31 @@ export default function LandingPage({ setView }) {
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold-500/10 rounded-full blur-3xl"></div>
 
             <div className="flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 text-[10px] font-bold uppercase tracking-wider">
+              <span className="px-3 py-1 rounded-full bg-gold-500/20 text-gold-300 light:text-amber-800 text-[10px] font-bold uppercase tracking-wider">
                 Exclusive Ticketed Access
               </span>
-              <span className="text-xs text-slate-400 font-medium">5:00 PM – 11:00 PM</span>
+              <span className="text-xs text-slate-400 light:text-slate-600 font-medium">5:00 PM – 11:00 PM</span>
             </div>
 
-            <h3 className="font-serif text-2xl font-bold text-slate-100">
+            <h3 className="font-serif text-2xl font-bold text-slate-100 light:text-slate-900">
               Indoor Sanctuary Workshops &amp; Panel
             </h3>
 
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 leading-relaxed font-normal">
               Deep immersive journey with live podcast discussions, multi-sensory breathwork journeys, sound frequency baths, cold plunges, and modern biohacking telemetry.
             </p>
 
-            <ul className="space-y-2.5 text-xs text-slate-400">
+            <ul className="space-y-2.5 text-xs text-slate-400 light:text-slate-600">
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-gold-400" />
+                <Check className="w-4 h-4 text-gold-400 light:text-amber-700" />
                 <span>Keynote Live Podcast: Natural vs Tech Biohacking</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-gold-400" />
+                <Check className="w-4 h-4 text-gold-400 light:text-amber-700" />
                 <span>432Hz Vibroacoustic Sound Healing Journey</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Check className="w-4 h-4 text-gold-400" />
+                <Check className="w-4 h-4 text-gold-400 light:text-amber-700" />
                 <span>Cold Plunge &amp; Cellular Activation Protocol</span>
               </li>
             </ul>
@@ -206,13 +206,13 @@ export default function LandingPage({ setView }) {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center space-y-3 mb-16">
-          <span className="text-xs font-semibold text-gold-metallic tracking-widest uppercase">
+          <span className="text-xs font-semibold text-gold-metallic light:text-amber-700 tracking-widest uppercase">
             Visual Identity
           </span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold gold-gradient-text uppercase">
             Campaign Frame Assets
           </h2>
-          <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto">
+          <p className="text-xs sm:text-sm text-slate-300 light:text-slate-600 max-w-xl mx-auto">
             These frame variations are designed as social overlays and media assets for partner co-branding.
           </p>
         </div>
@@ -220,32 +220,32 @@ export default function LandingPage({ setView }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           
           <div className="glass-card p-4 rounded-2xl border border-gold-metallic/20 space-y-3">
-            <div className="aspect-square rounded-xl overflow-hidden border border-white/10">
+            <div className="aspect-square rounded-xl overflow-hidden border border-white/10 light:border-slate-200">
               <img src="./assets/frame_dual.png" alt="Dual Split Frame" className="w-full h-full object-cover" />
             </div>
             <div className="text-center">
-              <div className="font-serif text-sm font-bold text-slate-200">Variation 1: Dual Synthesis Frame</div>
-              <div className="text-[11px] text-teal-400">1:1 Square Overlay</div>
+              <div className="font-serif text-sm font-bold text-slate-200 light:text-slate-800">Variation 1: Dual Synthesis Frame</div>
+              <div className="text-[11px] text-teal-400 light:text-teal-700 font-semibold">1:1 Square Overlay</div>
             </div>
           </div>
 
           <div className="glass-card p-4 rounded-2xl border border-gold-metallic/20 space-y-3">
-            <div className="aspect-square rounded-xl overflow-hidden border border-white/10">
+            <div className="aspect-square rounded-xl overflow-hidden border border-white/10 light:border-slate-200">
               <img src="./assets/frame_portal.png" alt="Portal Arch Frame" className="w-full h-full object-cover" />
             </div>
             <div className="text-center">
-              <div className="font-serif text-sm font-bold text-slate-200">Variation 2: Bio-Digital Portal</div>
-              <div className="text-[11px] text-teal-400">1:1 Ceremonial Arch</div>
+              <div className="font-serif text-sm font-bold text-slate-200 light:text-slate-800">Variation 2: Bio-Digital Portal</div>
+              <div className="text-[11px] text-teal-400 light:text-teal-700 font-semibold">1:1 Ceremonial Arch</div>
             </div>
           </div>
 
           <div className="glass-card p-4 rounded-2xl border border-gold-metallic/20 space-y-3">
-            <div className="aspect-square rounded-xl overflow-hidden border border-white/10">
+            <div className="aspect-square rounded-xl overflow-hidden border border-white/10 light:border-slate-200">
               <img src="./assets/frame_vertical.png" alt="Vertical Story Frame" className="w-full h-full object-cover" />
             </div>
             <div className="text-center">
-              <div className="font-serif text-sm font-bold text-slate-200">Variation 3: Vertical Story Frame</div>
-              <div className="text-[11px] text-teal-400">9:16 Social Story Asset</div>
+              <div className="font-serif text-sm font-bold text-slate-200 light:text-slate-800">Variation 3: Vertical Story Frame</div>
+              <div className="text-[11px] text-teal-400 light:text-teal-700 font-semibold">9:16 Social Story Asset</div>
             </div>
           </div>
 
@@ -261,7 +261,7 @@ export default function LandingPage({ setView }) {
             <h2 className="font-serif text-3xl font-bold gold-gradient-text uppercase">
               Secure Your Place in the Sanctuary
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-lg mx-auto">
+            <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 max-w-lg mx-auto font-normal">
               Spaces for the indoor workshops and immersive panels are limited to maintain the intimacy and integrity of the container.
             </p>
           </div>

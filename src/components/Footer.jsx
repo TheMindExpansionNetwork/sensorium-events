@@ -1,13 +1,13 @@
 import React from 'react';
-import { Instagram, MessageCircle, Mail, MapPin, Heart, Sparkles, ExternalLink } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, MapPin, Heart, ExternalLink } from 'lucide-react';
 import { SENSORIUM_DATA } from '../data/sensoriumData';
 
 export default function Footer({ setView }) {
   return (
-    <footer className="bg-[#030608] border-t border-gold-metallic/20 pt-16 pb-12">
+    <footer className="bg-[#030608] dark:bg-[#030608] light:bg-[#0F172A] text-slate-300 border-t border-gold-metallic/20 pt-16 pb-12 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/5">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 pb-12 border-b border-white/10">
           
           {/* Brand Col */}
           <div className="space-y-4 md:col-span-1">
@@ -37,7 +37,7 @@ export default function Footer({ setView }) {
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
                 <button onClick={() => { setView('home'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-teal-300 transition">
-                  Overview & Philosophy
+                  Overview &amp; Philosophy
                 </button>
               </li>
               <li>
@@ -47,12 +47,12 @@ export default function Footer({ setView }) {
               </li>
               <li>
                 <button onClick={() => { setView('portal'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-teal-300 transition">
-                  Vendor & Practitioner Portal
+                  Vendor &amp; Practitioner Portal
                 </button>
               </li>
               <li>
                 <button onClick={() => { setView('admin'); window.scrollTo({top:0, behavior:'smooth'}); }} className="hover:text-teal-300 transition">
-                  CRM & Portal Admin
+                  CRM &amp; Portal Admin
                 </button>
               </li>
             </ul>

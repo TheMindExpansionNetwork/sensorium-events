@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, ArrowRight, CheckCircle2, Store, HeartHandshake, Shield, Layers, HelpCircle } from 'lucide-react';
+import { Sparkles, ArrowRight, CheckCircle2, Store, HeartHandshake } from 'lucide-react';
 import { DB } from '../utils/database';
 
 export default function PortalPage() {
@@ -31,14 +31,14 @@ export default function PortalPage() {
       
       {/* Header */}
       <div className="text-center space-y-3">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 text-xs font-semibold uppercase tracking-widest">
-          <Sparkles className="w-3.5 h-3.5 text-teal-glow" />
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-teal-500/20 border border-teal-400/40 text-teal-300 light:text-teal-800 text-xs font-semibold uppercase tracking-widest">
+          <Sparkles className="w-3.5 h-3.5 text-teal-glow light:text-teal-600" />
           <span>Frequency Shift Labs · Partner Application</span>
         </div>
         <h1 className="font-serif text-3xl sm:text-5xl font-bold gold-gradient-text uppercase">
           Co-Create the Sensorium Sanctuary
         </h1>
-        <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto">
+        <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 max-w-xl mx-auto font-normal">
           We invite conscious artisans, organic elixir crafters, thought leaders, and holistic facilitators to join our September 19 gathering.
         </p>
       </div>
@@ -50,7 +50,7 @@ export default function PortalPage() {
           className={`flex items-center space-x-2 px-6 py-3.5 rounded-2xl border text-xs font-bold uppercase tracking-wider transition duration-300 ${
             appType === 'Vendor'
               ? 'bg-gradient-to-r from-gold-600 to-gold-500 text-slate-950 border-gold-400 shadow-lg shadow-gold-500/20'
-              : 'glass-card border-white/10 text-slate-300 hover:text-white'
+              : 'glass-card border-white/10 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-white light:hover:text-slate-950'
           }`}
         >
           <Store className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function PortalPage() {
           className={`flex items-center space-x-2 px-6 py-3.5 rounded-2xl border text-xs font-bold uppercase tracking-wider transition duration-300 ${
             appType === 'Practitioner'
               ? 'bg-gradient-to-r from-teal-500 to-teal-400 text-slate-950 border-teal-300 shadow-lg shadow-teal-500/20'
-              : 'glass-card border-white/10 text-slate-300 hover:text-white'
+              : 'glass-card border-white/10 light:border-slate-300 text-slate-300 light:text-slate-700 hover:text-white light:hover:text-slate-950'
           }`}
         >
           <HeartHandshake className="w-4 h-4" />
@@ -74,13 +74,13 @@ export default function PortalPage() {
       <div className="glass-card p-8 sm:p-12 rounded-3xl border border-gold-metallic/30 shadow-2xl">
         {submitted ? (
           <div className="text-center py-12 space-y-4">
-            <div className="w-16 h-16 mx-auto rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center text-teal-300">
+            <div className="w-16 h-16 mx-auto rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center text-teal-300 light:text-teal-700">
               <CheckCircle2 className="w-8 h-8" />
             </div>
-            <h3 className="font-serif text-2xl font-bold text-slate-100">
+            <h3 className="font-serif text-2xl font-bold text-slate-100 light:text-slate-900">
               Application Received
             </h3>
-            <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+            <p className="text-xs sm:text-sm text-slate-300 light:text-slate-700 max-w-md mx-auto font-normal">
               Your application has been stored directly in our Sanctuary Lead CRM. Our partnership committee will review your profile and reach out via email/WhatsApp.
             </p>
             <button
@@ -88,7 +88,7 @@ export default function PortalPage() {
                 setSubmitted(false);
                 setFormData({ name: '', contact: '', email: '', phone: '', offerings: '', experience: '', instagram: '' });
               }}
-              className="px-6 py-2.5 rounded-full bg-white/10 hover:bg-white/20 text-xs text-slate-200 font-semibold tracking-wider uppercase transition"
+              className="px-6 py-2.5 rounded-full bg-white/10 light:bg-slate-200 hover:bg-white/20 text-xs text-slate-200 light:text-slate-800 font-semibold tracking-wider uppercase transition"
             >
               Submit Another Application
             </button>
@@ -99,7 +99,7 @@ export default function PortalPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-gold-300 uppercase">
+                <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                   {appType === 'Vendor' ? 'Brand / Business Name' : 'Full Name & Title'} *
                 </label>
                 <input
@@ -108,12 +108,12 @@ export default function PortalPage() {
                   placeholder={appType === 'Vendor' ? 'e.g. Solaris Herbal Elixirs' : 'e.g. Dr. Maya Lin, Sound Healer'}
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-gold-300 uppercase">
+                <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                   Primary Contact Person *
                 </label>
                 <input
@@ -122,12 +122,12 @@ export default function PortalPage() {
                   placeholder="e.g. Maya Lin"
                   value={formData.contact}
                   onChange={(e) => setFormData({ ...formData, contact: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-gold-300 uppercase">
+                <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                   Email Address *
                 </label>
                 <input
@@ -136,12 +136,12 @@ export default function PortalPage() {
                   placeholder="contact@brand.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
                 />
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-semibold text-gold-300 uppercase">
+                <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                   Phone / WhatsApp
                 </label>
                 <input
@@ -149,14 +149,14 @@ export default function PortalPage() {
                   placeholder="+1 (555) 000-0000"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                  className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
                 />
               </div>
 
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gold-300 uppercase">
+              <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                 {appType === 'Vendor' ? 'Products / Offerings / Services' : 'Modality / Workshop Description'} *
               </label>
               <textarea
@@ -169,12 +169,12 @@ export default function PortalPage() {
                 }
                 value={formData.offerings}
                 onChange={(e) => setFormData({ ...formData, offerings: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
               />
             </div>
 
             <div className="space-y-2">
-              <label className="text-xs font-semibold text-gold-300 uppercase">
+              <label className="text-xs font-semibold text-gold-300 light:text-amber-800 uppercase">
                 Instagram Profile / Website
               </label>
               <input
@@ -182,7 +182,7 @@ export default function PortalPage() {
                 placeholder="@yourhandle or https://..."
                 value={formData.instagram}
                 onChange={(e) => setFormData({ ...formData, instagram: e.target.value })}
-                className="w-full px-4 py-3 rounded-xl bg-[#070C0F] border border-gold-metallic/20 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-teal-400"
+                className="w-full px-4 py-3 rounded-xl bg-[#070C0F] light:bg-white border border-gold-metallic/20 light:border-slate-300 text-xs text-slate-100 light:text-slate-900 placeholder-slate-500 light:placeholder-slate-400 focus:outline-none focus:border-teal-400"
               />
             </div>
 

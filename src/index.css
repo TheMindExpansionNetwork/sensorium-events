@@ -3,14 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg-primary: #05080A;
+    --bg-surface: #0E161C;
+    --bg-card: rgba(14, 22, 28, 0.75);
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  html.light {
+    --bg-primary: #F8FAF9;
+    --bg-surface: #FFFFFF;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --border-color: rgba(180, 140, 30, 0.3);
+  }
+
   body {
-    background-color: #05080A;
-    color: #E2E8F0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 }
 
 .gold-gradient-text {
-  background: linear-gradient(135deg, #FDE047 0%, #D4AF37 50%, #CA8A04 100%);
+  background: linear-gradient(135deg, #FDE047 0%, #D4AF37 50%, #B45309 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+html.light .gold-gradient-text {
+  background: linear-gradient(135deg, #B45309 0%, #D97706 50%, #92400E 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -21,8 +48,10 @@
   -webkit-text-fill-color: transparent;
 }
 
-.gold-teal-border {
-  border-image: linear-gradient(135deg, #D4AF37, #00F5D4) 1;
+html.light .teal-gradient-text {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 50%, #115E59 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sacred-glow {
@@ -30,12 +59,17 @@
 }
 
 .glass-card {
-  background: rgba(14, 22, 28, 0.7);
+  background: var(--bg-card);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+html.light .glass-card {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
 .glass-card:hover {
-  border-color: rgba(0, 245, 212, 0.35);
+  border-color: rgba(0, 245, 212, 0.45);
 }
