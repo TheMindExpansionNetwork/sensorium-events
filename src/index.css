@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #05080A;
+    color: #E2E8F0;
+  }
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FDE047 0%, #D4AF37 50%, #CA8A04 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.teal-gradient-text {
+  background: linear-gradient(135deg, #5EEAD4 0%, #00F5D4 50%, #0D9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-teal-border {
+  border-image: linear-gradient(135deg, #D4AF37, #00F5D4) 1;
+}
+
+.sacred-glow {
+  box-shadow: 0 0 30px -5px rgba(0, 245, 212, 0.15), 0 0 20px -5px rgba(212, 175, 55, 0.15);
+}
+
+.glass-card {
+  background: rgba(14, 22, 28, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.glass-card:hover {
+  border-color: rgba(0, 245, 212, 0.35);
+}
